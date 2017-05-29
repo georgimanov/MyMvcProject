@@ -1,4 +1,4 @@
-﻿namespace MyMvcProject.Web.Models
+﻿namespace MyMvcProject.Data.Models
 {
     using System.Security.Claims;
     using System.Threading.Tasks;

@@ -1,5 +1,6 @@
-﻿namespace MyMvcProject.Web.Models
+﻿namespace MyMvcProject.Data
 {
+    using Models;
     using Microsoft.AspNet.Identity.EntityFramework;
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>

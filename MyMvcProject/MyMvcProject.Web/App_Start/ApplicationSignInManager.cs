@@ -1,6 +1,6 @@
 ﻿namespace MyMvcProject.Web.App_Start
 {
-    using MyMvcProject.Web.Models;
+    using Data.Models;
 
     using Microsoft.AspNet.Identity.Owin;
     using Microsoft.Owin;

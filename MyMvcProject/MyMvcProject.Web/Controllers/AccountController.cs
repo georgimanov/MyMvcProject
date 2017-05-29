@@ -9,6 +9,7 @@
     using Microsoft.Owin.Security;
     using MyMvcProject.Web.Models;
     using MyMvcProject.Web.App_Start;
+    using Data.Models;
 
     [Authorize]
     public class AccountController : Controller

@@ -9,6 +9,8 @@
     using Owin;
     using MyMvcProject.Web.Models;
     using App_Start;
+    using Data;
+    using Data.Models;
 
     public partial class Startup
     {
