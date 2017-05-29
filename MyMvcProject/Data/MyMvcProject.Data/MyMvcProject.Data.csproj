@@ -65,6 +65,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\MyMvcProject.Data.Common\MyMvcProject.Data.Common.csproj">
+      <Project>{fffe44d4-343a-4c25-8afa-6f22d980228b}</Project>
+      <Name>MyMvcProject.Data.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\MyMvcProject.Data.Model\MyMvcProject.Data.Models.csproj">
       <Project>{654F202A-1622-4B85-A2FA-A1511B952325}</Project>
       <Name>MyMvcProject.Data.Models</Name>
