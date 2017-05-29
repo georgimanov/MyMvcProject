@@ -1,7 +1,7 @@
 ﻿namespace MyMvcProject.Web.App_Start
 {
-    using Microsoft.AspNet.Identity;
     using System.Threading.Tasks;
+    using Microsoft.AspNet.Identity;
 
     public class SmsService : IIdentityMessageService
     {

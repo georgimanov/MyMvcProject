@@ -1,7 +1,11 @@
-﻿namespace MyMvcProject.Web.App_Start
+﻿// <copyright file="EmailService.cs" company="PlaceholderCompany">
+// Copyright (c) PlaceholderCompany. All rights reserved.
+// </copyright>
+
+namespace MyMvcProject.Web.App_Start
 {
-    using Microsoft.AspNet.Identity;
     using System.Threading.Tasks;
+    using Microsoft.AspNet.Identity;
 
     public class EmailService : IIdentityMessageService
     {
