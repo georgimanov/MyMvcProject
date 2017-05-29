@@ -14,6 +14,7 @@ namespace MyMvcProject.Web.Controllers
     using Microsoft.AspNet.Identity.Owin;
     using Microsoft.Owin.Security;
     using Models;
+    using Models.Account;
 
     [Authorize]
     public class AccountController : Controller

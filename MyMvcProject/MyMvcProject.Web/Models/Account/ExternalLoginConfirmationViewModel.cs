@@ -1,6 +1,5 @@
-﻿namespace MyMvcProject.Web.Models
+﻿namespace MyMvcProject.Web.Models.Account
 {
-    using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
 
     public class ExternalLoginConfirmationViewModel

@@ -1,7 +1,6 @@
-﻿namespace MyMvcProject.Web.Models
+﻿namespace MyMvcProject.Web.Models.Manage
 {
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
     using Microsoft.AspNet.Identity;
     using Microsoft.Owin.Security;
 

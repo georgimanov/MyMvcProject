@@ -1,4 +1,4 @@
-﻿namespace MyMvcProject.Web.Models
+﻿namespace MyMvcProject.Web.Models.Account
 {
     using System.ComponentModel.DataAnnotations;
 
