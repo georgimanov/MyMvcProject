@@ -7,9 +7,9 @@
     using Microsoft.AspNet.Identity.EntityFramework;
     using Models;
 
-    public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
+    public class MyMvcProjectDbContext : IdentityDbContext<ApplicationUser>
     {
-        public ApplicationDbContext()
+        public MyMvcProjectDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {
         }
@@ -24,9 +24,9 @@
             get; set;
         }
 
-        public static ApplicationDbContext Create()
+        public static MyMvcProjectDbContext Create()
         {
-            return new ApplicationDbContext();
+            return new MyMvcProjectDbContext();
         }
 
         public override int SaveChanges()

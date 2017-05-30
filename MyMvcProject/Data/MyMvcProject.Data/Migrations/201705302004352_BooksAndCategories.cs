@@ -1,13 +1,12 @@
 namespace MyMvcProject.Data.Migrations
 {
-    using System;
     using System.Data.Entity.Migrations;
-    
+
     public partial class BooksAndCategories : DbMigration
     {
         public override void Up()
         {
-            CreateTable(
+            this.CreateTable(
                 "dbo.Books",
                 c => new
                     {
@@ -24,8 +23,8 @@ namespace MyMvcProject.Data.Migrations
                 .ForeignKey("dbo.Categories", t => t.CategoryId, cascadeDelete: true)
                 .Index(t => t.CategoryId)
                 .Index(t => t.IsDeleted);
-            
-            CreateTable(
+
+            this.CreateTable(
                 "dbo.Categories",
                 c => new
                     {
@@ -38,17 +37,16 @@ namespace MyMvcProject.Data.Migrations
                     })
                 .PrimaryKey(t => t.Id)
                 .Index(t => t.IsDeleted);
-            
         }
-        
+
         public override void Down()
         {
-            DropForeignKey("dbo.Books", "CategoryId", "dbo.Categories");
-            DropIndex("dbo.Categories", new[] { "IsDeleted" });
-            DropIndex("dbo.Books", new[] { "IsDeleted" });
-            DropIndex("dbo.Books", new[] { "CategoryId" });
-            DropTable("dbo.Categories");
-            DropTable("dbo.Books");
+            this.DropForeignKey("dbo.Books", "CategoryId", "dbo.Categories");
+            this.DropIndex("dbo.Categories", new[] { "IsDeleted" });
+            this.DropIndex("dbo.Books", new[] { "IsDeleted" });
+            this.DropIndex("dbo.Books", new[] { "CategoryId" });
+            this.DropTable("dbo.Categories");
+            this.DropTable("dbo.Books");
         }
     }
 }

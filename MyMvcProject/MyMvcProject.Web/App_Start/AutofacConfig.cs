@@ -1,11 +1,12 @@
 ﻿namespace MyMvcProject.Web.App_Start
 {
-    using System;
+    using System.Data.Entity;
     using System.Reflection;
     using System.Web.Mvc;
-
     using Autofac;
     using Autofac.Integration.Mvc;
+    using Data;
+    using Data.Common;
 
     public static class AutofacConfig
     {
@@ -30,7 +31,7 @@
             builder.RegisterFilterProvider();
 
             // Register services
-            //RegisterServices(builder);
+            RegisterServices(builder);
 
             // Set the dependency resolver to be Autofac.
             var container = builder.Build();
@@ -39,7 +40,13 @@
 
         private static void RegisterServices(ContainerBuilder builder)
         {
-            throw new NotImplementedException();
+            builder.Register(x => new MyMvcProjectDbContext())
+                .As<DbContext>()
+                .InstancePerRequest();
+
+            builder.RegisterGeneric(typeof(DbRepository<>))
+                .As(typeof(IDbRepository<>))
+                .InstancePerRequest();
         }
     }
 }
