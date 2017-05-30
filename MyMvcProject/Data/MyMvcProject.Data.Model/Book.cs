@@ -4,12 +4,12 @@
 
     public class Book : BaseModel<int>
     {
-        public string Content
+        public string Title
         {
             get; set;
         }
 
-        public string Title
+        public string Resume
         {
             get; set;
         }

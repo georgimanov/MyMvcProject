@@ -232,6 +232,7 @@
     <Compile Include="Models\Manage\VerifyPhoneNumberViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="ViewModels\Home\BookViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />
@@ -312,6 +313,10 @@
     <Content Include="Scripts\jquery-3.1.1.min.map" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Data\MyMvcProject.Data.Common\MyMvcProject.Data.Common.csproj">
+      <Project>{FFFE44D4-343A-4C25-8AFA-6F22D980228B}</Project>
+      <Name>MyMvcProject.Data.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Data\MyMvcProject.Data.Model\MyMvcProject.Data.Models.csproj">
       <Project>{654F202A-1622-4B85-A2FA-A1511B952325}</Project>
       <Name>MyMvcProject.Data.Models</Name>
@@ -319,6 +324,10 @@
     <ProjectReference Include="..\Data\MyMvcProject.Data\MyMvcProject.Data.csproj">
       <Project>{B35BD2B6-09F5-4838-A7B0-91BBCF2CE91C}</Project>
       <Name>MyMvcProject.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Web\MyMvcProject.Web.Infrastructure\MyMvcProject.Web.Infrastructure.csproj">
+      <Project>{c0ef7c4e-8422-48f7-ac1e-0e021e4944c3}</Project>
+      <Name>MyMvcProject.Web.Infrastructure</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
