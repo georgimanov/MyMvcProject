@@ -1,14 +1,23 @@
-﻿@model IEnumerable<MyMvcProject.Web.ViewModels.Home.BookViewModel>
+﻿@model MyMvcProject.Web.ViewModels.Home.IndexViewModel
 
 @{
     ViewBag.Title = "Home Page";
 }
 
 <div class="row">
-    @foreach (var book in Model)
+    @foreach (var category in Model.Categories)
     {
         <div class="col-md-4">
-            @book.Resume
+            <h4>@category.Name</h4>
+        </div>
+    }
+</div>
+
+<div class="row">
+    @foreach (var book in Model.Books)
+    {
+        <div class="col-md-4">
+            <h4>@book.Title</h4>
         </div>
     }
 </div>

@@ -21,6 +21,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyMvcProject.Data.Models", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyMvcProject.Web.Infrastructure", "Web\MyMvcProject.Web.Infrastructure\MyMvcProject.Web.Infrastructure.csproj", "{C0EF7C4E-8422-48F7-AC1E-0E021E4944C3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyMvcProject.Services.Data", "Services\MyMvcProject.Services.Data\MyMvcProject.Services.Data.csproj", "{81C5E375-A9F1-4982-B129-B77050B43549}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -47,6 +49,10 @@ Global
 		{C0EF7C4E-8422-48F7-AC1E-0E021E4944C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C0EF7C4E-8422-48F7-AC1E-0E021E4944C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C0EF7C4E-8422-48F7-AC1E-0E021E4944C3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{81C5E375-A9F1-4982-B129-B77050B43549}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{81C5E375-A9F1-4982-B129-B77050B43549}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{81C5E375-A9F1-4982-B129-B77050B43549}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{81C5E375-A9F1-4982-B129-B77050B43549}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -57,5 +63,6 @@ Global
 		{FFFE44D4-343A-4C25-8AFA-6F22D980228B} = {DF2D7840-5E34-4B74-8E42-A4D2C5482796}
 		{654F202A-1622-4B85-A2FA-A1511B952325} = {DF2D7840-5E34-4B74-8E42-A4D2C5482796}
 		{C0EF7C4E-8422-48F7-AC1E-0E021E4944C3} = {464F7464-CA93-44A5-90C8-6D5CDE315BBB}
+		{81C5E375-A9F1-4982-B129-B77050B43549} = {FEE937EB-1A06-443F-ABB2-304E74D65F18}
 	EndGlobalSection
 EndGlobal

@@ -1,32 +1,39 @@
 ﻿namespace MyMvcProject.Web.Controllers
 {
-    using System;
     using System.Linq;
     using System.Web.Mvc;
-    using Data.Common;
-    using Data.Models;
+    using Infrastructure.Mapping;
+    using Services.Data;
     using ViewModels.Home;
 
     public class HomeController : Controller
     {
-        private IDbRepository<Book> books;
-        private IDbRepository<Category> categories;
+        private IBooksService booksService;
+        private ICategoriesService categoriesService;
 
-        public HomeController(IDbRepository<Book> books, IDbRepository<Category> categories)
+        public HomeController(IBooksService booksService, ICategoriesService categoriesService)
         {
-            this.books = books;
-            this.categories = categories;
+            this.booksService = booksService;
+            this.categoriesService = categoriesService;
         }
 
         public ActionResult Index()
         {
-            var booksResult = this.books
-                .All()
-                .OrderBy(x => Guid.NewGuid())
-                .Take(3)
-                .Select(x => new BookViewModel() { Resume = x.Resume });
+            var booksResult = this.booksService
+                .GetRandomBooks(3)
+                .To<BookViewModel>()
+                .ToList();
 
-            return this.View(booksResult);
+            var categoriesResult = this.categoriesService
+                .GetAll()
+                .To<CategoryViewModel>()
+                .ToList();
+
+            var indexViewModel = new IndexViewModel();
+            indexViewModel.Books = booksResult;
+            indexViewModel.Categories = categoriesResult;
+
+            return this.View(indexViewModel);
         }
     }
 }

@@ -7,6 +7,7 @@
     using Autofac.Integration.Mvc;
     using Data;
     using Data.Common;
+    using Services.Data;
 
     public static class AutofacConfig
     {
@@ -43,6 +44,9 @@
             builder.Register(x => new MyMvcProjectDbContext())
                 .As<DbContext>()
                 .InstancePerRequest();
+
+            var serviceAssembly = Assembly.GetAssembly(typeof(IBooksService));
+            builder.RegisterAssemblyTypes(serviceAssembly).AsImplementedInterfaces();
 
             builder.RegisterGeneric(typeof(DbRepository<>))
                 .As(typeof(IDbRepository<>))
