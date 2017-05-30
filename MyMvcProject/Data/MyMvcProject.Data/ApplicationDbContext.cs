@@ -1,11 +1,11 @@
 ﻿namespace MyMvcProject.Data
 {
-    using Models;
-    using Microsoft.AspNet.Identity.EntityFramework;
+    using System;
+    using System.Data.Entity;
     using System.Linq;
     using Common.Models;
-    using System.Data.Entity;
-    using System;
+    using Microsoft.AspNet.Identity.EntityFramework;
+    using Models;
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {

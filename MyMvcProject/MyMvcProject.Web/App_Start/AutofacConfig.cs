@@ -30,7 +30,7 @@
             builder.RegisterFilterProvider();
 
             // Register services
-            RegisterServices(builder);
+            //RegisterServices(builder);
 
             // Set the dependency resolver to be Autofac.
             var container = builder.Build();

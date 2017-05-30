@@ -1,7 +1,7 @@
 ﻿namespace MyMvcProject.Data.Common
 {
-    using Models;
     using System.Linq;
+    using Models;
 
     public interface IDbRepository<T>
         where T : class, IAuditInfo, IDeletableEntity

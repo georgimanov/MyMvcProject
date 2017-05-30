@@ -1,6 +1,6 @@
 ﻿namespace MyMvcProject.Data.Common.Models
 {
-    interface IEntityWithCreator
+    internal interface IEntityWithCreator
     {
         string UserId
         {
