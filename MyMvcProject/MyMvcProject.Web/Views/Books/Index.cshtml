@@ -1,0 +1,65 @@
+﻿@model IEnumerable<MyMvcProject.Web.ViewModels.Books.BookViewModel>
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+@Html.ActionLink("add book", "add", "books", new { @class = "btn btn-primary" });
+
+<div class="container">
+    <h2>All books</h2>
+    <table class="table" id="tableBooks">
+        <thead>
+            <tr>
+                <td>Title</td>
+                <td>Resume</td>
+                <td>Link</td>
+                <td>Edit</td>
+                <td>Delete</td>
+            </tr>
+        </thead>
+        @foreach (var book in Model)
+        {
+            <tr class="bookRow" id="book-@book.Id">
+                <td>@book.Title</td>
+                <td>@book.Resume</td>
+                <td>
+                    @Html.ActionLink(book.Title, "byid", "books", new
+               {
+                   id = book.Id
+               }, null)
+                </td>
+                <td>edit link</td>
+                <td>
+                    <a href="#" class="deleteBook" data-id="@book.Id">Delete</a>
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>
+
+@section Scripts
+{
+    <script type="text/javascript">
+
+        $('#tableBooks').on('click', '.deleteBook', function () { // use event delegation
+            var id = $(this).data('id');
+            if (id == 0) { // assumes property Id is typeof int
+                // Its a new item so just remove from the DOM
+                $(this).closest('.bookRow').remove();
+            } else {
+                // Its an existing item so call controller to delete it from the database
+                var url = '@Url.Action("Delete", "Books")';
+                $.post(url, { ID: id }, function (response) {
+                    if (response) {
+                        // The book was successfully deleted
+                        $('#book-' + id).remove();
+                    }
+                }).fail(function (response) {
+                    alert("Oops, something went wrong")
+                });
+            }
+        });
+    </script>
+}

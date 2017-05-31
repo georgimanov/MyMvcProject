@@ -1,4 +1,4 @@
-﻿namespace MyMvcProject.Web.ViewModels.Home
+﻿namespace MyMvcProject.Web.ViewModels.Books
 {
     using AutoMapper;
     using Data.Models;
@@ -6,6 +6,11 @@
 
     public class BookViewModel : IMapFrom<Book>, IHaveCustomMappings
     {
+        public int Id
+        {
+            get; set;
+        }
+
         public string Title
         {
             get; set;

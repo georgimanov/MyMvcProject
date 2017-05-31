@@ -5,6 +5,7 @@
     using Infrastructure.Mapping;
     using Services.Data;
     using ViewModels.Home;
+    using ViewModels.Books;
 
     public class HomeController : BaseController
     {

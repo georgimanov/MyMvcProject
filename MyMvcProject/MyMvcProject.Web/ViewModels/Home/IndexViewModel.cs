@@ -1,6 +1,7 @@
 ﻿namespace MyMvcProject.Web.ViewModels.Home
 {
     using System.Collections.Generic;
+    using Books;
 
     public class IndexViewModel
     {
