@@ -8,6 +8,7 @@
     using Data;
     using Data.Common;
     using Services.Data;
+    using Services.Web;
 
     public static class AutofacConfig
     {
@@ -44,6 +45,10 @@
             builder.Register(x => new MyMvcProjectDbContext())
                 .As<DbContext>()
                 .InstancePerRequest();
+
+            builder.Register(x => new HttpCacheService())
+               .As<ICacheService>()
+               .InstancePerRequest();
 
             var serviceAssembly = Assembly.GetAssembly(typeof(IBooksService));
             builder.RegisterAssemblyTypes(serviceAssembly).AsImplementedInterfaces();

@@ -335,6 +335,10 @@
       <Project>{81C5E375-A9F1-4982-B129-B77050B43549}</Project>
       <Name>MyMvcProject.Services.Data</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Services\MyMvcProject.Services.Web\MyMvcProject.Services.Web.csproj">
+      <Project>{82A2803F-E402-4365-A40D-F5002B7992D9}</Project>
+      <Name>MyMvcProject.Services.Web</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Web\MyMvcProject.Web.Infrastructure\MyMvcProject.Web.Infrastructure.csproj">
       <Project>{c0ef7c4e-8422-48f7-ac1e-0e021e4944c3}</Project>
       <Name>MyMvcProject.Web.Infrastructure</Name>
