@@ -6,7 +6,7 @@
     using Data.Models;
     using Infrastructure.Mapping;
 
-    public class BookInputModel : IMapTo<Book>
+    public class BookInputModel : IMapTo<Book>, IMapFrom<Book>
     {
         [Required]
         [StringLength(300)]

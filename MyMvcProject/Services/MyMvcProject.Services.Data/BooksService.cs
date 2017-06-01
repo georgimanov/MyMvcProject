@@ -30,7 +30,11 @@
         public void Update(Book book)
         {
             var oldBook = this.books.GetById(book.Id);
-            oldBook = book;
+            oldBook.CategoryId = book.CategoryId;
+            oldBook.Resume = book.Resume;
+            oldBook.Title = book.Title;
+            oldBook.ModifiedOn = DateTime.Now;
+
             this.books.Save();
         }
 

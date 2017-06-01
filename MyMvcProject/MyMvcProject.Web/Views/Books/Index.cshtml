@@ -1,10 +1,12 @@
 ﻿@model IEnumerable<MyMvcProject.Web.ViewModels.Books.BookViewModel>
 
 @{
-    ViewBag.Title = "Home Page";
+    ViewBag.Title = "Books Page";
 }
-
-@Html.ActionLink("add book", "add", "books", new { @class = "btn btn-primary" });
+@Html.ActionLink("Add book", "add", "books", new
+{
+    @class = "btn btn-primary pull-right"
+})
 
 <div class="container">
     <h2>All books</h2>
@@ -13,7 +15,7 @@
             <tr>
                 <td>Title</td>
                 <td>Resume</td>
-                <td>Link</td>
+                <td>View</td>
                 <td>Edit</td>
                 <td>Delete</td>
             </tr>
@@ -24,12 +26,17 @@
                 <td>@book.Title</td>
                 <td>@book.Resume</td>
                 <td>
-                    @Html.ActionLink(book.Title, "byid", "books", new
+                    @Html.ActionLink("View", "byid", "books", new
                {
                    id = book.Id
                }, null)
                 </td>
-                <td>edit link</td>
+                <td>
+                    @Html.ActionLink("Edit", "edit", "books", new
+               {
+                   id = book.Id
+               }, null)
+                </td>
                 <td>
                     <a href="#" class="deleteBook" data-id="@book.Id">Delete</a>
                 </td>

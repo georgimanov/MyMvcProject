@@ -1,0 +1,27 @@
+﻿@model IEnumerable<MyMvcProject.Web.ViewModels.Categories.CategoryViewModel>
+
+@{
+    ViewBag.Title = "Categories Page";
+}
+
+<div class="container">
+    <h2>All categories</h2>
+    <table class="table" id="tableBooks">
+        <thead>
+            <tr>
+                <td>Name</td>
+                <td>Books count</td>
+            </tr>
+        </thead>
+        @foreach (var category in Model)
+        {
+            <tr class="bookRow" id="category-@category.Id">
+                <td>@category.Name</td>
+                <td>
+                    @category.BooksCount
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>

@@ -58,8 +58,8 @@
             return this.View(bookInputViewModel);
         }
 
-        [ValidateAntiForgeryToken]
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Add(BookInputModel model)
         {
             if (this.ModelState.IsValid)
@@ -73,7 +73,50 @@
 
                 this.booksService.Add(book);
 
-                this.TempData["Notification"] = "Book added successfully";
+                return this.RedirectToAction("Index");
+            }
+
+            return this.View(model);
+        }
+
+        [HttpGet]
+        public ActionResult Edit(int id)
+        {
+            var book = this.booksService.GetBookById(id);
+            var bookInputViewModel = new BookUpdateModel
+            {
+                Category = this.categoriesService
+                   .GetAll()
+                   .ToList()
+                   .Select(c => new SelectListItem
+                   {
+                       Value = c.Id.ToString(),
+                       Text = c.Name
+                   }),
+                Resume = book.Resume,
+                Title = book.Title,
+                CategoryId = book.CategoryId,
+                Id = book.Id
+            };
+
+            return this.View(bookInputViewModel);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit(BookUpdateModel model)
+        {
+            if (this.ModelState.IsValid)
+            {
+                var bookUpdate = new Book()
+                {
+                    CategoryId = model.CategoryId,
+                    Resume = model.Resume,
+                    Title = model.Title,
+                    Id = model.Id
+                };
+
+                this.booksService.Update(bookUpdate);
 
                 return this.RedirectToAction("Index");
             }
