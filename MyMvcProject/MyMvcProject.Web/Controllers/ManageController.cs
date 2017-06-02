@@ -10,6 +10,7 @@
     using Microsoft.Owin.Security;
     using Models;
     using Models.Manage;
+    using Data;
 
     public enum ManageMessageId
     {
@@ -88,13 +89,19 @@
                 : string.Empty;
 
             var userId = this.User.Identity.GetUserId();
+
+            // TODO: extend to service
+            var databaseContext = this.HttpContext.GetOwinContext().Get<MyMvcProjectDbContext>();
+            var user = databaseContext.Users.Where(x => x.Id == userId).FirstOrDefault();
+
             var model = new IndexViewModel
             {
                 HasPassword = this.HasPassword(),
                 PhoneNumber = await this.UserManager.GetPhoneNumberAsync(userId),
                 TwoFactor = await this.UserManager.GetTwoFactorEnabledAsync(userId),
                 Logins = await this.UserManager.GetLoginsAsync(userId),
-                BrowserRemembered = await this.AuthenticationManager.TwoFactorBrowserRememberedAsync(userId)
+                BrowserRemembered = await this.AuthenticationManager.TwoFactorBrowserRememberedAsync(userId),
+                UserPhotoUrl = string.IsNullOrEmpty(user.UserPhotoUrl) ? string.Empty : user.UserPhotoUrl
             };
 
             return this.View(model);
